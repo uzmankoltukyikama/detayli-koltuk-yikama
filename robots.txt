@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /*.php$
+
+Sitemap: https://uzmankoltukyikama.github.io/detayli-koltuk-yikama/sitemap_index.xml
