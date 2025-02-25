@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /*.php$
+Disallow:
 
 Sitemap: https://uzmankoltukyikama.github.io/detayli-koltuk-yikama/sitemap.xml
