@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="İzmir Detaylı Yatak Yıkama">
+    <title>İzmir Detaylı Yatak Yıkama</title>
+    <link rel="shortcut icon" type="image/jpg" href="../../image/logo.jpg" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@350&display=swap');
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        header {
+            background: #000000;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1100;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo-container span {
+            font-size: 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-family: Roboto;
+            padding: 10px;
+            border-radius: 5px;
+            transition: color 0.3s ease;
+        }
+        .nav-links-iletisim{
+            margin-right: 25px;
+        }
+        .nav-links a:hover{
+            color: rgb(100, 100, 100);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            margin-right: 20px;
+            transition: 0.2s;
+        }
+        .menu-toggle:hover{
+            color: gray;
+            font-size: 35px;
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.3s ease-in-out;
+            z-index: 1200;
+        }
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+        .mobile-menu a:hover{
+            color: rgb(100, 100, 100);
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1100;
+        }
+        .overlay.active {
+            display: block;
+        }
+        .hero {
+            margin-top: 70px;
+            padding: 100px;
+            background: url('../../image/room.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero h1 {
+            position: relative;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 0px 0px 40px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h1{
+                font-size: 28px;
+            }
+        }
+        
+        .middle-section {
+            margin-top: 40px;
+        }
+        .middle-section iframe {
+            width: calc(100% - 20px);
+            max-width: 560px;
+            height: 315px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0px 0px 50px #000;
+        }
+        
+        .gallery {
+            margin-top: 50px;
+            padding: 20px;
+            background: #fff;
+        }
+        .gallery h2{
+            font-family: Roboto;
+            font-size: 35px;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0px 0px 30px;
+        }
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery-item{
+            padding: 1em;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px #000;
+        }
+        .gallery-item img {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0px 0px 25px #000;
+        }
+        .gallery-item p{
+            font-family: Roboto;
+            font-size: 25px;
+            font-weight: bolder;
+            color: #000;
+
+        }
+        footer {
+            background: #000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="../../image/logo.jpg" alt="Logo">
+            <span>UZMAN Koltuk Yıkama</span>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html">Ana Sayfa</a>
+            <a href="../../index.html">Hizmetlerimiz</a>
+            <a class="nav-links-iletisim" href="../../iletişim.html">İletişim</a>
+        </div>
+        <div class="menu-toggle" id="menu-button">☰</div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html">Ana Sayfa</a>
+        <a href="../../hizmetlerimiz.html">Hizmetlerimiz</a>
+        <a href="../../iletişim.html">İletişim</a>
+        <br>
+        <div class="galery-container">
+            <a class="gallery-item" href="https://wa.me/905542864848" style="background-color: #000;"><img src="../../image/whatsapp-logo.png" alt="whatsapp" style="width: 50px;"></a>
+            <a class="gallery-item" href="https://www.instagram.com/koltuk_yikamaaaci_izmirr/" style="background-color: #000;"><img src="../../image/instagram-logo.png" alt="instagram" style="width: 50px;"></a>
+        </div>
+    </div>
+    
+    <section class="hero">
+        <h1>En İyi Hizmet, En İyi Yıkama.</h1>
+    </section>
+    
+    
+    <section class="middle-section">
+        <iframe  src="https://www.youtube-nocookie.com/embed/_ahuCth7VG8?si=qI33t5OgpZlg21Ln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    
+    <section class="gallery">
+        <h2>Hizmetlerimiz</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="../../image/Koltuk.jpg" alt="Koltuk Yıkama">
+                <p>Koltuk Yıkama</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../../image/Yatak.jpg" alt="Yatak Yıkama">
+                <p>Yatak Yıkama</p>
+            </div>
+            <div class="gallery-item">
+                <img src="../../image/Sandalye.jpg" alt="Sandalye Yıkama">
+                <p>Sandalye Yıkama</p>
+            </div>
+            <div class="gallery-item" style="background-color: #fff; box-shadow: none;text-shadow: 1px 1px 30px #000;">
+                <p>İşin ucuzuna değil uzmanına bakın.</p>
+                <h2 style="box-shadow: none;">UZMAN Koltuk Yıkamacı</h2>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 UZMAN Koltuk Yıkama. Tüm hakları saklıdır.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuButton = document.getElementById("menu-button");
+            var menu = document.getElementById("mobile-menu");
+            var overlay = document.getElementById("overlay");
+            
+            function toggleMenu() {
+                menu.classList.toggle("active");
+                overlay.classList.toggle("active");
+            }
+
+            menuButton.addEventListener("click", toggleMenu);
+            overlay.addEventListener("click", toggleMenu);
+        });
+    </script>
+</body>
+</html>
