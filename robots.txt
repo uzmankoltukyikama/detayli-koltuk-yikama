@@ -1,4 +1,3 @@
 User-agent: *
-Disallow:
-
+Allow: /
 Sitemap: https://uzmankoltukyikama.github.io/detayli-koltuk-yikama/sitemap.xml
