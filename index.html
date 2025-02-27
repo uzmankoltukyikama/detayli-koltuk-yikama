@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ2CS45MLM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJ2CS45MLM');
+    </script>
+    <meta charset="UTF-8">
+    <title>Detaylı Koltuk Yıkama | Profesyonel Koltuk Temizliği</title>
+    <meta name="description" content="Evde veya iş yerinizde profesyonel koltuk yıkama hizmeti! Leke ve kötü kokuları tamamen yok ediyoruz. Hemen randevu alın.">
+    <meta name="keywords" content="koltuk yıkama, detaylı koltuk yıkama, profesyonel koltuk temizliği, yerinde temizlik, hijyenik koltuk yıkama, leke çıkarma">
+    <meta name="author" content="Uzman Koltuk Yıkama">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Detaylı Koltuk Yıkama | Profesyonel Koltuk Temizliği">
+    <meta property="og:description" content="Koltuklarınızı hijyenik hale getiren profesyonel koltuk yıkama hizmeti sunuyoruz. Temiz ve sağlıklı bir ortam için bizimle iletişime geçin.">
+    <meta property="og:image" content="https://uzmankoltukyikama.github.io/detayli-koltuk-yikama/images/koltuk-yikama.webp">
+    <meta property="og:url" content="https://uzmankoltukyikama.github.io/detayli-koltuk-yikama/">
+    <link rel="shortcut icon" type="image/webp" href="image/logo.webp" />
+    <link rel="stylesheet" href="styles.min.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <header>
+        <div class="logo-container">
+            <img src="image/logo.webp" alt="Logo" loading="lazy">
+            <span>UZMAN Koltuk Yıkama</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a class="nav-links-iletisim" href="iletişim.html">İletişim</a>
+        </div>
+        <div class="menu-toggle" id="menu-button">☰</div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="iletişim.html">İletişim</a>
+        <br>
+        <div class="galery-container">
+            <a class="gallery-item" href="https://wa.me/905542864848" style="background-color: #000;"><img src="image/whatsapp-logo.webp" alt="whatsapp" style="width: 50px;" loading="lazy"></a>
+            <a class="gallery-item" href="https://www.instagram.com/koltuk_yikamaaaci_izmirr/" style="background-color: #000;"><img src="image/instagram-logo.webp" alt="instagram" style="width: 50px;" loading="lazy"></a>
+        </div>
+    </div>
+
+    <section class="hero" data-bg="image/room.webp">
+        <h1>En İyi Hizmet, En İyi Yıkama.</h1>
+    </section>
+
+    <section class="middle-section">
+        <iframe src="https://www.youtube-nocookie.com/embed/_ahuCth7VG8?si=qI33t5OgpZlg21Ln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </section>
+
+    <section class="gallery">
+        <h2>Hizmetlerimiz</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="image/Koltuk.webp" alt="Koltuk Yıkama" loading="lazy">
+                <p>Koltuk Yıkama</p>
+            </div>
+            <div class="gallery-item">
+                <img src="image/Yatak.webp" alt="Yatak Yıkama" loading="lazy">
+                <p>Yatak Yıkama</p>
+            </div>
+            <div class="gallery-item">
+                <img src="image/Sandalye.webp" alt="Sandalye Yıkama" loading="lazy">
+                <p>Sandalye Yıkama</p>
+            </div>
+            <div class="gallery-item" style="background-color: #fff; box-shadow: none;text-shadow: 1px 1px 30px #000;">
+                <p>İşin ucuzuna değil uzmanına bakın.</p>
+                <h2 style="box-shadow: none;">UZMAN Koltuk Yıkamacı</h2>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 UZMAN Koltuk Yıkama. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuButton = document.getElementById("menu-button");
+            var menu = document.getElementById("mobile-menu");
+            var overlay = document.getElementById("overlay");
+
+            function toggleMenu() {
+                menu.classList.toggle("active");
+                overlay.classList.toggle("active");
+            }
+
+            menuButton.addEventListener("click", toggleMenu);
+            overlay.addEventListener("click", toggleMenu);
+
+            var heroElement = document.querySelector('.hero');
+            var bgImage = heroElement.getAttribute('data-bg');
+            heroElement.style.backgroundImage = `url(${bgImage})`;
+        });
+    </script>
+
+</body>
+</html>
